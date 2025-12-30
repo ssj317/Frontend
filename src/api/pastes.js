@@ -13,7 +13,7 @@ export async function createPaste(data) {
 }
 
 export async function fetchPaste(id) {
-  const res = await fetch(`${API_BASE}/api/pastes/${id}`);
+  const res = await fetch(`${API_BASE}/pastes/${id}`);
   const json = await res.json();
   if (!res.ok) throw new Error(json.error || "Paste not found");
   return json;
