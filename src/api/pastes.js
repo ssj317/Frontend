@@ -1,7 +1,7 @@
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 export async function createPaste(data) {
-  const res = await fetch(`${API_BASE}/pastes`, {
+  const res = await fetch(`${API_BASE}/api/pastes`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -13,7 +13,7 @@ export async function createPaste(data) {
 }
 
 export async function fetchPaste(id) {
-  const res = await fetch(`${API_BASE}/pastes/${id}`);
+  const res = await fetch(`${API_BASE}/api/pastes/${id}`);
   const json = await res.json();
   if (!res.ok) throw new Error(json.error || "Paste not found");
   return json;
