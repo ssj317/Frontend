@@ -1,16 +1,42 @@
-# React + Vite
+# Pastebin Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for a Pastebin-like application where users can create text pastes and view them using a shareable link.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+##  How to Run Locally
 
-## React Compiler
+npm install
+npm run dev
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+## The app will run on:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+http://localhost:5173
+
+## Create a .env file in the frontend root:
+
+VITE_API_BASE_URL=http://localhost:3000
+
+## Persistence Layer
+
+The frontend does not store data locally.
+All persistence is handled by the backend via REST APIs.
+
+## Important Design Decisions
+
+Built as a Single Page Application (SPA) using React
+
+Uses HashRouter to ensure /p/:id works on static hosting (Netlify/Vercel)
+
+Keeps frontend stateless; all business logic lives in the backend
+
+Minimal UI focused on functionality rather than styling
+
+Communicates with backend using a configurable API base URL
+
+
+## Deployed Frontend
+
+Frontend URL
+https://illustrious-truffle-244cfd.netlify.app
